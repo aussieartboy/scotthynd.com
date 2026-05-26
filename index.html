@@ -1,1128 +1,1392 @@
 <!doctype html>
 <html lang="en-AU">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scott Hynd | Website Reviews, Local SEO and AI Search Visibility</title>
-  <meta name="description" content="Practical website reviews, mobile trust improvements, local SEO, AI-search visibility and enquiry-path fixes for established local service businesses.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Scott Hynd">
-  <link rel="canonical" href="https://scotthynd.com/">
-  <meta property="og:title" content="Scott Hynd | Website Reviews, Local SEO and AI Search Visibility">
-  <meta property="og:description" content="Practical website, mobile, SEO, AI-search and enquiry-path improvements for established local service businesses.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://scotthynd.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Scott Hynd",
-    "url": "https://scotthynd.com/",
-    "email": "scott@scotthynd.com",
-    "areaServed": "Australia",
-    "description": "Website reviews, local SEO, AI-search visibility, mobile trust and enquiry-path improvements for established local service businesses.",
-    "founder": {
-      "@type": "Person",
-      "name": "Scott Hynd"
-    },
-    "serviceType": [
-      "Website reviews",
-      "Website refreshes",
-      "Local SEO improvements",
-      "AI-search visibility improvements",
-      "Mobile website improvement",
-      "Website conversion improvement"
-    ]
-  }
-  </script>
-  <style>
-    :root {
-      --ink: #121826;
-      --ink-soft: #263244;
-      --muted: #627083;
-      --line: #dce5ec;
-      --paper: #f6f8f6;
-      --white: #ffffff;
-      --teal: #0a7c72;
-      --teal-dark: #064d48;
-      --mint: #dff5ee;
-      --sage: #7ea88b;
-      --clay: #b95738;
-      --gold: #b68a2c;
-      --cream: #f7efdc;
-      --shadow: 0 24px 70px rgba(18, 24, 38, 0.16);
-      --soft-shadow: 0 14px 38px rgba(18, 24, 38, 0.09);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px clamp(18px, 4vw, 60px);
-      background: rgba(255, 255, 255, 0.93);
-      border-bottom: 1px solid rgba(220, 229, 236, 0.9);
-      backdrop-filter: blur(16px);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-      text-decoration: none;
-    }
-
-    .logo {
-      width: 46px;
-      height: 46px;
-      flex: 0 0 auto;
-    }
-
-    .brand-text {
-      display: grid;
-      gap: 1px;
-    }
-
-    .brand-text strong {
-      font-size: 16px;
-      letter-spacing: 0;
-    }
-
-    .brand-text span {
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: 650;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 18px;
-      border-radius: 8px;
-      border: 1px solid var(--teal);
-      background: var(--teal);
-      color: white;
-      font-weight: 800;
-      text-decoration: none;
-      white-space: nowrap;
-      box-shadow: 0 10px 24px rgba(10, 124, 114, 0.22);
-    }
-
-    .button.secondary {
-      background: white;
-      color: var(--teal-dark);
-      box-shadow: none;
-    }
-
-    .hero {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 560px);
-      gap: clamp(30px, 5vw, 64px);
-      align-items: center;
-      padding: clamp(42px, 6vw, 76px) clamp(18px, 4vw, 60px) clamp(42px, 5vw, 68px);
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 78% 16%, rgba(182, 138, 44, 0.22), transparent 28%),
-        radial-gradient(circle at 14% 4%, rgba(10, 124, 114, 0.18), transparent 24%),
-        linear-gradient(135deg, #eef8f3 0%, #ffffff 56%, var(--cream) 100%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -10% -1px -10%;
-      height: 88px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff);
-      pointer-events: none;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 1;
-      max-width: 810px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 18px;
-      color: var(--teal-dark);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--clay);
-    }
-
-    h1 {
-      margin: 0 0 20px;
-      font-size: clamp(42px, 5.6vw, 68px);
-      line-height: 1;
-      letter-spacing: 0;
-      max-width: 900px;
-    }
-
-    .hero-copy > p:not(.eyebrow) {
-      margin: 0;
-      max-width: 700px;
-      color: var(--ink-soft);
-      font-size: clamp(18px, 2vw, 22px);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .hero-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .hero-proof span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 7px 10px;
-      border: 1px solid rgba(98, 112, 131, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .visual-wrap {
-      position: relative;
-      z-index: 1;
-      min-height: 500px;
-    }
-
-    .visual-orbit {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-    }
-
-    .visual-orbit svg {
-      width: min(100%, 560px);
-      height: auto;
-      filter: drop-shadow(0 28px 42px rgba(18, 24, 38, 0.16));
-    }
-
-    .audit-card {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 38px;
-      width: min(100%, 500px);
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(220, 229, 236, 0.95);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .audit-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .audit-top strong {
-      font-size: 16px;
-    }
-
-    .score-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 10px;
-      border-radius: 8px;
-      background: #fff1e8;
-      color: var(--clay);
-      font-size: 12px;
-      font-weight: 850;
-    }
-
-    .audit-grid {
-      display: grid;
-      grid-template-columns: 1fr 150px;
-      gap: 16px;
-      padding: 16px;
-    }
-
-    .audit-list {
-      display: grid;
-      gap: 11px;
-      align-content: start;
-    }
-
-    .audit-item {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 10px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px;
-      background: #fbfcfd;
-    }
-
-    .audit-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      background: var(--mint);
-      color: var(--teal-dark);
-      font-weight: 900;
-    }
-
-    .audit-item strong {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 14px;
-    }
-
-    .audit-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .phone-shot {
-      border: 1px solid #bac7d0;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #f6f8fb;
-      box-shadow: inset 0 0 0 5px #edf1f4;
-    }
-
-    .phone-top {
-      height: 24px;
-      background: var(--ink);
-    }
-
-    .phone-screen {
-      padding: 13px 11px 15px;
-      display: grid;
-      gap: 9px;
-    }
-
-    .screen-line {
-      height: 10px;
-      border-radius: 5px;
-      background: #c8d2da;
-    }
-
-    .screen-line.short {
-      width: 64%;
-    }
-
-    .screen-block {
-      height: 94px;
-      border-radius: 7px;
-      background: linear-gradient(135deg, #d9e9ed, #f2efe5);
-      border: 1px solid #c6d3da;
-    }
-
-    .screen-button {
-      height: 30px;
-      border-radius: 7px;
-      background: var(--teal);
-    }
-
-    .floating-note {
-      position: absolute;
-      right: 12px;
-      bottom: 18px;
-      width: 230px;
-      border: 1px solid rgba(220, 229, 236, 0.9);
-      border-radius: 8px;
-      padding: 14px;
-      background: #ffffff;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .floating-note strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--teal-dark);
-      font-size: 14px;
-    }
-
-    .floating-note p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .band {
-      padding: clamp(48px, 7vw, 86px) clamp(18px, 4vw, 60px);
-      border-top: 1px solid var(--line);
-      scroll-margin-top: 86px;
-    }
-
-    .band.soft {
-      background:
-        linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
-    }
-
-    .section-head {
-      max-width: 790px;
-      margin-bottom: 30px;
-    }
-
-    .section-head h2 {
-      margin: 0 0 12px;
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .signal-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .signal {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: white;
-      box-shadow: 0 10px 24px rgba(18, 24, 38, 0.04);
-    }
-
-    .signal b {
-      display: block;
-      font-size: 24px;
-      line-height: 1;
-      color: var(--teal-dark);
-      margin-bottom: 8px;
-    }
-
-    .signal span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .tile {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 20px;
-      background: white;
-      min-height: 176px;
-      overflow: hidden;
-    }
-
-    .tile::after {
-      content: "";
-      position: absolute;
-      inset: auto 16px 0 16px;
-      height: 4px;
-      border-radius: 999px 999px 0 0;
-      background: var(--teal);
-    }
-
-    .tile:nth-child(2)::after,
-    .tile:nth-child(5)::after {
-      background: var(--sage);
-    }
-
-    .tile:nth-child(3)::after,
-    .tile:nth-child(6)::after {
-      background: var(--gold);
-    }
-
-    .tile b {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .tile p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      counter-reset: step;
-    }
-
-    .step {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 20px;
-      background: white;
-      box-shadow: 0 10px 28px rgba(18, 24, 38, 0.05);
-    }
-
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      background: var(--teal);
-      color: white;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .step h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-      letter-spacing: 0;
-    }
-
-    .step p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .proof {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    .about-panel {
-      display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: 24px;
-      align-items: center;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 22px;
-      background: white;
-      box-shadow: var(--soft-shadow);
-      max-width: 980px;
-    }
-
-    .headshot {
-      width: 160px;
-      aspect-ratio: 1;
-      border-radius: 8px;
-      object-fit: cover;
-      border: 5px solid var(--cream);
-      box-shadow: 0 14px 30px rgba(18, 24, 38, 0.14);
-    }
-
-    .about-panel h2 {
-      margin: 0 0 8px;
-      font-size: clamp(26px, 4vw, 38px);
-      line-height: 1.08;
-      letter-spacing: 0;
-    }
-
-    .about-panel p {
-      margin: 0 0 12px;
-      color: var(--muted);
-    }
-
-    .about-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .about-list li {
-      border: 1px solid rgba(10, 124, 114, 0.18);
-      border-radius: 8px;
-      padding: 7px 10px;
-      background: #f2faf7;
-      color: var(--teal-dark);
-      font-size: 13px;
-      font-weight: 750;
-    }
-
-    .sample-audit {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 1.08fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    .sample-sheet {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: white;
-      box-shadow: var(--soft-shadow);
-      padding: 18px;
-    }
-
-    .sample-sheet header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      padding-bottom: 12px;
-      margin-bottom: 14px;
-      border-bottom: 2px solid var(--teal);
-    }
-
-    .sample-sheet header strong {
-      font-size: 18px;
-    }
-
-    .sample-sheet header span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 750;
-    }
-
-    .sample-rows {
-      display: grid;
-      gap: 10px;
-    }
-
-    .sample-row {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 10px;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fbfcfd;
-    }
-
-    .sample-row b {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      background: #fff1e8;
-      color: var(--clay);
-    }
-
-    .sample-row strong {
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .sample-row p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .privacy-note {
-      margin-top: 22px;
-      border-left: 4px solid var(--teal);
-      padding: 12px 0 12px 16px;
-      color: var(--muted);
-      max-width: 820px;
-    }
-
-    .quote {
-      border: 1px solid rgba(169, 120, 19, 0.3);
-      border-left: 5px solid var(--gold);
-      border-radius: 8px;
-      padding: 22px;
-      background: #fffaf0;
-      color: var(--ink-soft);
-      font-size: 19px;
-    }
-
-    .quote strong {
-      color: var(--ink);
-    }
-
-    .cta {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 22px;
-      align-items: center;
-      background:
-        linear-gradient(135deg, rgba(10, 124, 114, 0.95), rgba(6, 77, 72, 0.98)),
-        var(--teal-dark);
-      color: white;
-      border-radius: 8px;
-      padding: clamp(26px, 4vw, 40px);
-      overflow: hidden;
-    }
-
-    .cta::after {
-      content: "";
-      position: absolute;
-      right: -70px;
-      top: -70px;
-      width: 190px;
-      height: 190px;
-      border: 28px solid rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-    }
-
-    .cta > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta h2 {
-      margin: 0 0 8px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .cta p {
-      margin: 0;
-      color: #dcebea;
-      max-width: 780px;
-    }
-
-    .cta .button {
-      border-color: white;
-      background: white;
-      color: var(--teal-dark);
-      box-shadow: none;
-    }
-
-    footer {
-      padding: 24px clamp(18px, 4vw, 60px);
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      font-size: 14px;
-    }
-
-    @media (max-width: 1020px) {
-      .hero,
-      .proof,
-      .cta {
-        grid-template-columns: 1fr;
-      }
-
-      .visual-wrap {
-        min-height: 500px;
-      }
-
-      .signal-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 900px) {
-      nav a:not(.button) {
-        display: none;
-      }
-
-      .grid,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .about-panel,
-      .sample-audit {
-        grid-template-columns: 1fr;
-      }
-
-      .audit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .phone-shot {
-        max-width: 250px;
-      }
-
-      .floating-note {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: auto;
-        margin-top: 16px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .site-header {
-        align-items: flex-start;
-      }
-
-      .brand-text span {
-        white-space: normal;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      nav .button {
-        width: auto;
-        padding-inline: 12px;
-      }
-
-      .hero {
-        padding-top: 36px;
-      }
-
-      .visual-wrap {
-        min-height: auto;
-      }
-
-      .visual-orbit {
-        display: none;
-      }
-
-      .audit-card {
-        position: relative;
-        top: auto;
-        width: 100%;
-      }
-
-      .audit-top {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .signal-row {
-        grid-template-columns: 1fr;
-      }
-
-      .about-panel {
-        padding: 18px;
-      }
-
-      .headshot {
-        width: 132px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Practical website reviews, mobile trust improvements, local SEO, AI-search visibility and enquiry-path fixes for established local service businesses.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Scott Hynd">
+<link rel="canonical" href="https://scotthynd.com/">
+<meta property="og:title" content="Scott Hynd | Website Reviews, Local SEO and AI Search Visibility">
+<meta property="og:description" content="Practical website, mobile, SEO, AI-search and enquiry-path improvements for established local service businesses.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scotthynd.com/">
+<meta name="twitter:card" content="summary_large_image">
+<title>Scott Hynd | Website Reviews, Local SEO and AI Search Visibility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Scott Hynd",
+  "url": "https://scotthynd.com/",
+  "email": "scott@scotthynd.com",
+  "areaServed": "Australia",
+  "description": "Website reviews, local SEO, AI-search visibility, mobile trust and enquiry-path improvements for established local service businesses.",
+  "founder": {
+    "@type": "Person",
+    "name": "Scott Hynd"
+  },
+  "serviceType": [
+    "Website reviews",
+    "Website refreshes",
+    "Local SEO improvements",
+    "AI-search visibility improvements",
+    "Mobile website improvement",
+    "Website conversion improvement"
+  ]
+}
+</script>
+<style>
+:root {
+  /* ── Brand palette derived from #262166 ── */
+  --brand:        #262166;   /* primary navy-indigo */
+  --brand-dark:   #1a1748;   /* hover / pressed */
+  --brand-mid:    #3d37a0;   /* lighter variant for accents */
+  --brand-light:  #eeedf8;   /* tinted backgrounds */
+  --brand-border: #d0cef2;   /* tinted borders */
+
+  /* ── Teal accent (complementary) ── */
+  --teal:         #14b8a6;
+  --teal-light:   #f0fdfa;
+
+  /* ── Neutrals ── */
+  --white:        #ffffff;
+  --sky:          #f4f4fb;   /* page tint — brand-hued not blue-hued */
+  --slate-50:     #f8f8fc;
+  --slate-100:    #f0f0f8;
+  --slate-200:    #e0e0ee;
+  --slate-400:    #9494b8;
+  --slate-500:    #5f5f88;
+  --slate-600:    #46466a;
+  --slate-700:    #323256;
+  --slate-800:    #1e1e3a;
+
+  /* ── Semantic colours ── */
+  --green:        #22c55e;
+  --green-light:  #f0fdf4;
+  --amber:        #f59e0b;
+  --amber-light:  #fffbeb;
+  --rose:         #f43f5e;
+  --rose-light:   #fff1f2;
+  --violet:       #8b5cf6;
+  --violet-light: #f5f3ff;
+
+  /* ── Tokens ── */
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 1px 3px rgba(38,33,102,0.06), 0 1px 2px rgba(38,33,102,0.04);
+  --shadow:    0 4px 16px rgba(38,33,102,0.07), 0 2px 6px rgba(38,33,102,0.04);
+  --shadow-lg: 0 12px 40px rgba(38,33,102,0.10), 0 4px 12px rgba(38,33,102,0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--white);
+  color: var(--slate-700);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 64px;
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+/* Icon sits in a small pill so the SVG doesn't need a background of its own */
+.logo-icon-wrap {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.logo-icon-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--brand);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--slate-500);
+  text-decoration: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  transition: all 0.18s;
+}
+.nav-links a:hover { color: var(--brand); background: var(--brand-light); }
+
+.nav-btn {
+  background: var(--brand) !important;
+  color: white !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: 0 2px 8px rgba(38,33,102,0.28) !important;
+  transition: all 0.18s !important;
+}
+.nav-btn:hover {
+  background: var(--brand-dark) !important;
+  box-shadow: 0 4px 14px rgba(38,33,102,0.38) !important;
+  transform: translateY(-1px);
+  color: white !important;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 64px;
+  background: linear-gradient(160deg, var(--sky) 0%, var(--white) 60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%; right: -5%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(38,33,102,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(20,184,166,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-light);
+  border: 1px solid var(--brand-border);
+  color: var(--brand);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--brand);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+.hero-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--slate-800);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title .highlight {
+  color: var(--brand);
+  position: relative;
+}
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 2px; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--teal));
+  border-radius: 2px;
+  opacity: 0.35;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--slate-500);
+  max-width: 44ch;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 14px rgba(38,33,102,0.3);
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(38,33,102,0.38); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  color: var(--slate-700);
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--brand-border); color: var(--brand); box-shadow: var(--shadow); }
+
+.hero-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.chip {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--slate-500);
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hero visual */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.float-card {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--slate-700);
+  white-space: nowrap;
+  animation: floatCard 4s ease-in-out infinite;
+  border: 1px solid var(--slate-100);
+}
+.float-card:nth-child(2) { animation-delay: -1.3s; }
+.float-card:nth-child(3) { animation-delay: -2.6s; }
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.fc-1 { top: 5%; left: -8%; }
+.fc-2 { bottom: 15%; left: -12%; }
+.fc-3 { top: 20%; right: -10%; }
+
+.fc-icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── SECTION WRAPPER ── */
+.section-wrap { max-width: 1160px; margin: 0 auto; padding: 0 2.5rem; }
+section { padding: 6rem 0; }
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 0.9rem;
+}
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--slate-800);
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--slate-500);
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 54ch;
+}
+
+/* ── GLANCE STRIP ── */
+.glance {
+  background: var(--slate-50);
+  border-top: 1px solid var(--slate-100);
+  border-bottom: 1px solid var(--slate-100);
+  padding: 2rem 0;
+}
+
+.glance-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.glance-item {
+  padding: 1.25rem 1rem;
+  border-right: 1px solid var(--slate-200);
+  transition: background 0.15s;
+}
+.glance-item:last-child { border-right: none; }
+.glance-item:hover { background: var(--white); }
+
+.glance-icon {
+  width: 40px; height: 40px;
+  margin: 0 auto 0.6rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+}
+
+.glance-label { font-size: 0.82rem; font-weight: 500; color: var(--slate-700); line-height: 1.3; }
+
+/* ── PROBLEMS ── */
+.problems-bg { background: linear-gradient(180deg, var(--white) 0%, var(--sky) 100%); }
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.problem-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+.problem-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: var(--brand-border); }
+
+.problem-icon-wrap {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.problem-card h3 { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: var(--slate-800); margin-bottom: 0.35rem; }
+.problem-card p { font-size: 0.875rem; color: var(--slate-500); line-height: 1.65; font-weight: 300; }
+
+/* ── SERVICES ── */
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.services-sticky { position: sticky; top: 5rem; }
+.services-sticky p { font-size: 0.95rem; color: var(--slate-500); line-height: 1.75; margin-top: 1rem; font-weight: 300; }
+
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.service-card:hover::before { opacity: 1; }
+
+.sc-brand::before  { background: var(--brand); }
+.sc-teal::before   { background: var(--teal); }
+.sc-amber::before  { background: var(--amber); }
+.sc-violet::before { background: var(--violet); }
+.sc-rose::before   { background: var(--rose); }
+.sc-green::before  { background: var(--green); }
+
+.service-icon-wrap { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+
+.service-card h3 { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--slate-800); margin-bottom: 0.35rem; }
+.service-card p { font-size: 0.82rem; color: var(--slate-500); line-height: 1.6; font-weight: 300; }
+
+.service-tag {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ── PROCESS ── */
+.process-section { background: var(--sky); border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); }
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 2.25rem;
+  left: calc(16.66% + 1.5rem);
+  right: calc(16.66% + 1.5rem);
+  height: 2px;
+  background: var(--brand-border);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.process-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--slate-100);
+  transition: all 0.2s;
+}
+.process-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--brand-border); }
+
+.step-bubble {
+  width: 48px; height: 48px;
+  background: var(--brand);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 4px 12px rgba(38,33,102,0.28);
+}
+
+.process-card h3 { font-family: 'Nunito', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--slate-800); margin-bottom: 0.6rem; }
+.process-card p { font-size: 0.85rem; color: var(--slate-500); line-height: 1.65; font-weight: 300; }
+
+/* ── ABOUT ── */
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+.about-visual { position: relative; width: 100%; max-width: 420px; }
+
+.about-img-wrap { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+.about-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; filter: saturate(0.9); }
+
+.about-badge-float {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 0.75rem 1.1rem;
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.8rem; font-weight: 500; color: var(--slate-700);
+  border: 1px solid var(--slate-100);
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+
+.about-copy .section-title { margin-bottom: 1.25rem; }
+.about-copy p { font-size: 0.97rem; color: var(--slate-500); line-height: 1.8; margin-bottom: 1rem; font-weight: 300; }
+
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.skill-chip {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; font-weight: 500; color: var(--slate-600);
+  background: var(--slate-50); border: 1px solid var(--slate-200);
+  padding: 0.35rem 0.85rem; border-radius: 999px;
+}
+
+/* ── AUDIT ── */
+.audit-section { background: var(--sky); border-top: 1px solid var(--slate-100); }
+
+.audit-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+
+.audit-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--slate-100);
+  transition: all 0.2s;
+}
+.audit-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--brand-border); }
+
+.audit-num-wrap { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+.audit-card h3 { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: var(--slate-800); margin-bottom: 0.5rem; }
+.audit-card p { font-size: 0.85rem; color: var(--slate-500); line-height: 1.65; font-weight: 300; }
+
+/* ── WHO ── */
+.who-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
+.who-copy p { font-size: 0.97rem; color: var(--slate-500); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
+
+.approach-card {
+  background: var(--brand-light);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.approach-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.85rem; }
+.approach-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.75; font-style: italic; font-weight: 300; }
+
+.privacy-note { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--brand-border); font-size: 0.78rem; color: var(--slate-400); line-height: 1.6; }
+
+/* ── CONTACT FORM ── */
+.contact-section { background: var(--white); }
+
+.contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+
+.contact-info h3 { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--slate-800); margin-bottom: 0.6rem; }
+.contact-info p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.75; font-weight: 300; margin-bottom: 1.5rem; }
+
+.contact-method {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--slate-50); border: 1px solid var(--slate-200);
+  border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--slate-700);
+  font-size: 0.88rem; font-weight: 500;
+  transition: all 0.18s; margin-bottom: 0.75rem;
+}
+.contact-method:hover { border-color: var(--brand); background: var(--brand-light); color: var(--brand); box-shadow: var(--shadow-sm); }
+
+.cm-icon { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+.contact-form {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1.25rem; }
+
+.form-group label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--slate-700); margin-bottom: 0.4rem; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: var(--slate-800);
+  transition: all 0.18s;
+  outline: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--brand);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(38,33,102,0.08);
+}
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%239494b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-note { font-size: 0.75rem; color: var(--slate-400); margin-top: 0.75rem; line-height: 1.6; }
+
+.form-note { color: var(--slate-500); }
+
+.success-icon {
+  width: 60px; height: 60px;
+  background: var(--green-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+.form-success h3 { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--slate-800); margin-bottom: 0.5rem; }
+.form-success p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.7; }
+.form-success { display: none; text-align: center; }
+.form-success.is-visible { display: block; }
+.zoho-submit-frame { display: none; width: 0; height: 0; border: 0; }
+
+/* What happens next mini-steps */
+.next-steps { margin-top: 2rem; padding: 1.5rem; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius); }
+.next-steps-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-400); margin-bottom: 1rem; }
+.next-step { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.9rem; }
+.next-step:last-child { margin-bottom: 0; }
+.ns-bubble { width: 24px; height: 24px; border-radius: 50%; background: var(--brand-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.ns-bubble span { font-size: 0.7rem; font-weight: 700; color: var(--brand); }
+.next-step p { font-size: 0.85rem; color: var(--slate-500); line-height: 1.5; }
+
+/* ── CTA ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 55%, var(--brand-mid) 100%);
+  padding: 6rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -20%;
+  width: 700px; height: 700px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-inner { max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1rem; }
+.cta-section h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; color: white; line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.01em; }
+.cta-section p { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 2.25rem; line-height: 1.7; font-weight: 300; }
+
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: white; color: var(--brand);
+  padding: 0.9rem 2.25rem; font-size: 0.9rem; font-weight: 600;
+  text-decoration: none; border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  transition: all 0.2s;
+}
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.24); background: var(--sky); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--brand-dark);
+  color: rgba(255,255,255,0.45);
+  padding: 2rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.82rem;
+}
+.footer-logo { display: flex; align-items: center; gap: 0.6rem; }
+.footer-logo-icon { width: 26px; height: 26px; background: rgba(255,255,255,0.1); border-radius: 7px; display: flex; align-items: center; justify-content: center; padding: 4px; }
+.footer-logo-icon img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.18s; }
+footer a:hover { color: white; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fu   { animation: fadeUp 0.65s ease both; }
+.fu-2 { animation: fadeUp 0.65s 0.12s ease both; }
+.fu-3 { animation: fadeUp 0.65s 0.24s ease both; }
+.fu-4 { animation: fadeUp 0.65s 0.36s ease both; }
+.fu-5 { animation: fadeUp 0.65s 0.48s ease both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 1.5rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem 3rem; }
+  .hero-visual { display: none; }
+  .glance-inner { grid-template-columns: repeat(2,1fr); padding: 0 1.5rem; }
+  .problems-grid { grid-template-columns: 1fr; }
+  .services-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .services-sticky { position: static; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .process-steps::before { display: none; }
+  .about-layout { grid-template-columns: 1fr; }
+  .about-visual { max-width: 340px; margin: 0 auto; }
+  .audit-cards { grid-template-columns: 1fr; }
+  .who-layout { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  section { padding: 4rem 0; }
+  .section-wrap { padding: 0 1.5rem; }
+  footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .glance-inner { grid-template-columns: 1fr 1fr; }
+  .contact-form { padding: 1.5rem; }
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Scott Hynd home">
-      <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="Scott Hynd logo">
-        <defs>
-          <linearGradient id="logo-gradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#064d48"></stop>
-            <stop offset="0.62" stop-color="#0a7c72"></stop>
-            <stop offset="1" stop-color="#b68a2c"></stop>
-          </linearGradient>
-        </defs>
-        <rect x="5" y="5" width="54" height="54" rx="14" fill="url(#logo-gradient)"></rect>
-        <path d="M18 34.5 27.5 44 47 20" fill="none" stroke="#fffaf0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
-        <path d="M19 21h17M19 30h10M37 44h8" fill="none" stroke="#dff5ee" stroke-width="4" stroke-linecap="round" opacity="0.82"></path>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#top">
+    <div class="logo-icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="143 258 295 274" aria-label="Scott Hynd">
+        <path fill="#262166" d="M183.91,457.65l15.36-8.9c6.36,14.76,17.31,24.69,37.41,24.69s24.18-7.63,24.18-14.51c0-10.94-10.18-15.27-36.9-22.65-17.74-4.95-35.25-12.31-44.86-26.89-.3,3.66-.47,7.37-.47,11.11,0,12.9,1.85,25.36,5.29,37.15Z"/>
+        <path fill="#262166" d="M417.38,438.82h-55.99v70.75h-40.72v-178.15h40.72v68.21h55.99v-58.3c-24.16-32.37-62.76-53.33-106.26-53.33-38.14,0-72.5,16.12-96.68,41.9,5.45-1.35,11.14-2.04,16.89-2.04,29.27,0,52.17,14,65.15,40.21l-34.36,20.11c-6.11-12.73-14.51-20.62-30.8-20.62-12.72,0-19.09,6.36-19.09,13.49,0,8.14,4.33,13.74,32.07,22.14,26.98,8.14,57.26,17.56,57.26,55.23,0,34.36-27.49,54.72-66.17,54.72-7.57,0-14.57-.74-21.03-2.12,24.18,25.83,58.58,41.98,96.75,41.98,43.5,0,82.1-20.96,106.26-53.33v-60.84Z"/>
       </svg>
-      <span class="brand-text">
-        <strong>Scott Hynd</strong>
-        <span>Website trust and visibility</span>
-      </span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#improve">What I improve</a>
-      <a href="#process">How it works</a>
-      <a href="mailto:scott@scotthynd.com" class="button">Get a quick review</a>
-    </nav>
-  </header>
+    </div>
+    <span class="logo-text">Scott Hynd</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#improve">What I improve</a></li>
+    <li><a href="#process">How it works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="nav-btn" href="#contact">Get a free review</a></li>
+  </ul>
+</nav>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">Website reviews, local SEO and AI-search visibility</p>
-        <h1 id="hero-title">Make your website easier to trust, find, and act on.</h1>
-        <p>I help established local service businesses improve outdated websites with practical fixes across clarity, mobile experience, SEO, AI-search visibility and enquiry conversion.</p>
-        <div class="hero-actions">
-          <a class="button" href="mailto:scott@scotthynd.com?subject=Quick website review">Send me your website</a>
-          <a class="button secondary" href="#process">See what I look for</a>
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-badge fu">
+        <span class="badge-dot"></span>
+        Website Reviews · Local SEO · AI Search
+      </div>
+      <h1 class="hero-title fu-2">Make your site easier to <span class="highlight">trust, find</span> and act on.</h1>
+      <p class="hero-sub fu-3">I help established local service businesses improve outdated websites with practical fixes across clarity, mobile experience, SEO, AI-search visibility and enquiry conversion.</p>
+      <div class="hero-actions fu-4">
+        <a class="btn-primary" href="#contact">
+          Send me your website
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-ghost" href="#process">See what I look for</a>
+      </div>
+      <div class="hero-chips fu-5">
+        <span class="chip">Mobile-first</span>
+        <span class="chip">Local SEO</span>
+        <span class="chip">AI-search ready</span>
+        <span class="chip">Enquiry flow</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-card fc-1">
+        <div class="fc-icon" style="background:var(--brand-light);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#262166" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="#262166" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-        <div class="hero-proof" aria-label="Website review focus areas">
-          <span>Mobile-first checks</span>
-          <span>Trust and enquiry flow</span>
-          <span>Local SEO foundations</span>
-          <span>AI-search context</span>
+        Site review in 48h
+      </div>
+      <div class="float-card fc-2">
+        <div class="fc-icon" style="background:var(--green-light);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
+        No obligation
+      </div>
+      <div class="float-card fc-3">
+        <div class="fc-icon" style="background:var(--amber-light);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5 6.5 5z" stroke="#f59e0b" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        Plain English
       </div>
 
-      <aside class="visual-wrap" aria-label="Example visual website audit">
-        <div class="visual-orbit" aria-hidden="true">
-          <svg viewBox="0 0 560 560">
-            <circle cx="280" cy="280" r="218" fill="#ffffff" opacity="0.74"></circle>
-            <circle cx="280" cy="280" r="214" fill="none" stroke="#cddbe3" stroke-width="2"></circle>
-            <circle cx="280" cy="280" r="154" fill="none" stroke="#0a7c72" stroke-width="3" stroke-dasharray="10 13" opacity="0.35"></circle>
-            <circle cx="102" cy="150" r="38" fill="#b68a2c" opacity="0.88"></circle>
-            <circle cx="448" cy="126" r="26" fill="#b95738"></circle>
-            <circle cx="462" cy="408" r="42" fill="#7ea88b" opacity="0.9"></circle>
-            <path d="M114 408c56 56 141 78 218 50 52-19 93-58 117-106" fill="none" stroke="#b68a2c" stroke-width="7" stroke-linecap="round" opacity="0.72"></path>
-          </svg>
-        </div>
+      <svg width="420" height="340" viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 20px 60px rgba(38,33,102,0.14));">
+        <ellipse cx="210" cy="330" rx="160" ry="12" fill="rgba(38,33,102,0.07)"/>
+        <rect x="20" y="20" width="380" height="290" rx="16" fill="white" stroke="#e0e0ee" stroke-width="1.5"/>
+        <rect x="20" y="20" width="380" height="44" rx="16" fill="#f8f8fc"/>
+        <rect x="20" y="48" width="380" height="16" fill="#f8f8fc"/>
+        <rect x="20" y="56" width="380" height="8" fill="white"/>
+        <circle cx="46" cy="42" r="6" fill="#f87171"/>
+        <circle cx="66" cy="42" r="6" fill="#fbbf24"/>
+        <circle cx="86" cy="42" r="6" fill="#34d399"/>
+        <rect x="108" y="31" width="210" height="22" rx="6" fill="#f0f0f8"/>
+        <text x="135" y="46" font-family="monospace" font-size="10" fill="#9494b8">scotthynd.com</text>
+        <rect x="114" y="36" width="7" height="6" rx="1" fill="none" stroke="#9494b8" stroke-width="1"/>
+        <path d="M115.5 36v-2a2 2 0 0 1 4 0v2" stroke="#9494b8" stroke-width="1"/>
+        <rect x="36" y="72" width="348" height="80" rx="8" fill="#eeedf8"/>
+        <rect x="52" y="90" width="180" height="10" rx="4" fill="#d0cef2"/>
+        <rect x="52" y="108" width="140" height="10" rx="4" fill="#d0cef2"/>
+        <rect x="52" y="126" width="100" height="8" rx="4" fill="#e0deee"/>
+        <rect x="52" y="140" width="80" height="20" rx="6" fill="#262166"/>
+        <rect x="142" y="143" width="55" height="14" rx="4" fill="#f0f0f8"/>
+        <rect x="240" y="82" width="128" height="60" rx="8" fill="white" stroke="#e0e0ee" stroke-width="1"/>
+        <text x="254" y="102" font-family="sans-serif" font-size="9" fill="#9494b8" font-weight="500">Site score</text>
+        <circle cx="322" cy="106" r="18" stroke="#e0e0ee" stroke-width="4" fill="none"/>
+        <circle cx="322" cy="106" r="18" stroke="#262166" stroke-width="4" fill="none" stroke-dasharray="85 113" stroke-dashoffset="28" stroke-linecap="round"/>
+        <text x="322" y="110" font-family="sans-serif" font-size="9" fill="#262166" font-weight="700" text-anchor="middle">72</text>
+        <text x="254" y="130" font-family="sans-serif" font-size="7.5" fill="#9494b8">Mobile ready</text>
+        <rect x="252" y="132" width="52" height="5" rx="2.5" fill="#e0e0ee"/>
+        <rect x="252" y="132" width="28" height="5" rx="2.5" fill="#34d399"/>
+        <rect x="36" y="162" width="104" height="70" rx="8" fill="white" stroke="#e0e0ee" stroke-width="1"/>
+        <rect x="42" y="172" width="16" height="16" rx="4" fill="#eeedf8"/>
+        <rect x="42" y="196" width="60" height="7" rx="3" fill="#e0e0ee"/>
+        <rect x="42" y="208" width="45" height="6" rx="3" fill="#f0f0f8"/>
+        <rect x="152" y="162" width="104" height="70" rx="8" fill="white" stroke="#e0e0ee" stroke-width="1"/>
+        <rect x="158" y="172" width="16" height="16" rx="4" fill="#f0fdf4"/>
+        <rect x="158" y="196" width="60" height="7" rx="3" fill="#e0e0ee"/>
+        <rect x="158" y="208" width="45" height="6" rx="3" fill="#f0f0f8"/>
+        <rect x="268" y="162" width="104" height="70" rx="8" fill="white" stroke="#e0e0ee" stroke-width="1"/>
+        <rect x="274" y="172" width="16" height="16" rx="4" fill="#fffbeb"/>
+        <rect x="274" y="196" width="60" height="7" rx="3" fill="#e0e0ee"/>
+        <rect x="274" y="208" width="45" height="6" rx="3" fill="#f0f0f8"/>
+        <rect x="36" y="244" width="260" height="8" rx="4" fill="#f0f0f8"/>
+        <rect x="36" y="258" width="200" height="8" rx="4" fill="#f0f0f8"/>
+        <rect x="36" y="272" width="230" height="8" rx="4" fill="#f0f0f8"/>
+        <rect x="36" y="286" width="180" height="8" rx="4" fill="#f0f0f8"/>
+        <circle cx="348" cy="265" r="22" fill="#eeedf8" stroke="#d0cef2" stroke-width="1"/>
+        <text x="348" y="269" font-family="sans-serif" font-size="8.5" fill="#262166" text-anchor="middle" font-weight="600">SEO</text>
+        <circle cx="352" cy="249" r="5" fill="#22c55e"/>
+      </svg>
+    </div>
+  </div>
+</div>
 
-        <div class="audit-card">
-          <div class="audit-top">
-            <strong>Website opportunity snapshot</strong>
-            <span class="score-pill">Review-ready</span>
+<!-- GLANCE STRIP -->
+<div class="glance">
+  <div class="glance-inner">
+    <div class="glance-item">
+      <div class="glance-icon" style="background:var(--brand-light);">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="6" y="2" width="10" height="18" rx="2.5" stroke="#262166" stroke-width="1.5"/><rect x="8" y="16" width="6" height="2" rx="1" fill="#262166"/><circle cx="11" cy="7" r="1.5" fill="#262166"/></svg>
+      </div>
+      <div class="glance-label">Mobile-first checks</div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon" style="background:var(--green-light);">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#22c55e" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="glance-label">Trust &amp; enquiry flow</div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon" style="background:var(--amber-light);">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#f59e0b" stroke-width="1.5"/><path d="M11 7v4l3 3" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="glance-label">Local SEO foundations</div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon" style="background:var(--violet-light);">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3l2 5h5l-4 3 1.5 5L11 13l-4.5 3L8 11 4 8h5z" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="glance-label">AI-search context</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMS -->
+<section class="problems-bg" id="improve">
+  <div class="section-wrap">
+    <p class="section-eyebrow">The problem</p>
+    <h2 class="section-title">Small website issues can quietly cost trust.</h2>
+    <p class="section-sub">Many local business websites technically exist — but the first impression is unclear, outdated, hard to use on mobile, or thin on search context.</p>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon-wrap" style="background:var(--brand-light);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="6" width="20" height="16" rx="3" stroke="#262166" stroke-width="1.6"/><path d="M9 6V5a4 4 0 0 1 8 0v1" stroke="#262166" stroke-width="1.6" stroke-linecap="round"/><path d="M9 14h8M9 18h5" stroke="#262166" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Clearer first impression</h3>
+          <p>Visitors should immediately understand who you help, what you do and why they should choose you — in seconds.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon-wrap" style="background:var(--green-light);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="8" y="3" width="10" height="18" rx="2.5" stroke="#22c55e" stroke-width="1.6"/><rect x="10" y="18" width="6" height="2" rx="1" fill="#22c55e"/><circle cx="13" cy="8" r="1.5" fill="#22c55e"/></svg>
+        </div>
+        <div>
+          <h3>Better mobile confidence</h3>
+          <p>Most enquiries start on a phone. Your site needs to earn trust at thumb-width or you lose people before they call.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon-wrap" style="background:var(--amber-light);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="9" stroke="#f59e0b" stroke-width="1.6"/><path d="M13 5c4.4 0 8 3.6 8 8" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 2"/><path d="M8 13h5v-4" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Stronger local search signals</h3>
+          <p>Local businesses need location context woven into every page, heading and title to show up in local results.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon-wrap" style="background:var(--rose-light);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 4l2 5h5l-4 3 1.5 5L13 14l-4.5 3L10 12 6 9h5z" stroke="#f43f5e" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Easier enquiry path</h3>
+          <p>The next step should be obvious. Proof, contact options and calls-to-action all visible before someone leaves.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-wrap">
+    <div class="services-layout">
+      <div class="services-sticky">
+        <p class="section-eyebrow">What I improve</p>
+        <h2 class="section-title">Six areas that move the needle.</h2>
+        <p>I look at your website as part of how your business wins and handles new opportunities — not as a design project in isolation.</p>
+        <svg width="220" height="180" viewBox="0 0 220 180" fill="none" style="margin-top:2rem; display:block;">
+          <rect x="30" y="20" width="120" height="150" rx="12" fill="#f8f8fc" stroke="#e0e0ee" stroke-width="1.5"/>
+          <rect x="30" y="20" width="120" height="36" rx="12" fill="#eeedf8"/>
+          <rect x="30" y="44" width="120" height="12" fill="#eeedf8"/>
+          <rect x="46" y="72" width="88" height="7" rx="3" fill="#e0e0ee"/>
+          <rect x="46" y="86" width="70" height="7" rx="3" fill="#e0e0ee"/>
+          <rect x="46" y="100" width="80" height="7" rx="3" fill="#e0e0ee"/>
+          <rect x="46" y="114" width="60" height="7" rx="3" fill="#e0e0ee"/>
+          <rect x="46" y="128" width="75" height="7" rx="3" fill="#e0e0ee"/>
+          <rect x="46" y="142" width="50" height="7" rx="3" fill="#e0e0ee"/>
+          <rect x="46" y="32" width="55" height="8" rx="3" fill="#d0cef2"/>
+          <circle cx="150" cy="100" r="38" fill="white" stroke="#262166" stroke-width="2.5"/>
+          <circle cx="150" cy="100" r="38" fill="rgba(38,33,102,0.03)"/>
+          <rect x="128" y="96" width="44" height="7" rx="3" fill="#d0cef2" opacity="0.8"/>
+          <path d="M138 100l7 7 14-14" stroke="#262166" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="178" y1="128" x2="198" y2="150" stroke="#262166" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="55" cy="36" r="4" fill="#22c55e"/>
+          <circle cx="67" cy="36" r="4" fill="#fbbf24"/>
+          <circle cx="79" cy="36" r="4" fill="#f87171"/>
+        </svg>
+      </div>
+      <div class="services-grid">
+        <div class="service-card sc-brand">
+          <div class="service-icon-wrap" style="background:var(--brand-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="3" stroke="#262166" stroke-width="1.5"/><path d="M7 9h10M7 13h7" stroke="#262166" stroke-width="1.4" stroke-linecap="round"/></svg>
           </div>
-          <div class="audit-grid">
-            <div class="audit-list">
-              <div class="audit-item">
-                <span class="audit-icon">1</span>
-                <div>
-                  <strong>Search result clarity</strong>
-                  <p>Titles and descriptions should explain the service, location and reason to choose you.</p>
-                </div>
-              </div>
-              <div class="audit-item">
-                <span class="audit-icon">2</span>
-                <div>
-                  <strong>Phone-width confidence</strong>
-                  <p>Mobile visitors need to understand the firm and contact path quickly.</p>
-                </div>
-              </div>
-              <div class="audit-item">
-                <span class="audit-icon">3</span>
-                <div>
-                  <strong>AI-search context</strong>
-                  <p>Structured pages help search tools understand services, location and expertise.</p>
-                </div>
-              </div>
-            </div>
-            <div class="phone-shot" aria-hidden="true">
-              <div class="phone-top"></div>
-              <div class="phone-screen">
-                <div class="screen-line short"></div>
-                <div class="screen-line"></div>
-                <div class="screen-block"></div>
-                <div class="screen-line"></div>
-                <div class="screen-line short"></div>
-                <div class="screen-button"></div>
-              </div>
-            </div>
+          <h3>Website clarity</h3>
+          <p>Clarify what you do, who you help and why someone should choose you — above the fold.</p>
+          <span class="service-tag" style="background:var(--brand-light); color:var(--brand);">Foundation</span>
+        </div>
+        <div class="service-card sc-green">
+          <div class="service-icon-wrap" style="background:var(--green-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="18" rx="2.5" stroke="#22c55e" stroke-width="1.5"/><rect x="9" y="17" width="6" height="2" rx="1" fill="#22c55e"/><circle cx="12" cy="7" r="1.5" fill="#22c55e"/></svg>
           </div>
-        </div>
-        <div class="floating-note">
-          <strong>Give-first review</strong>
-          <p>Useful observations before any recommendation to rebuild or refresh.</p>
-        </div>
-      </aside>
-    </section>
-
-    <section class="band soft" id="improve">
-      <div class="section-head">
-        <h2>Small website issues can quietly cost trust.</h2>
-        <p>Many local business websites technically exist, but the first impression is unclear, outdated, hard to use on mobile, or thin on search context.</p>
-      </div>
-      <div class="signal-row" aria-label="Website improvement signals">
-        <div class="signal"><b>01</b><span>Clearer first impression</span></div>
-        <div class="signal"><b>02</b><span>Better mobile confidence</span></div>
-        <div class="signal"><b>03</b><span>Stronger local search signals</span></div>
-        <div class="signal"><b>04</b><span>Easier enquiry path</span></div>
-      </div>
-      <div class="grid">
-        <div class="tile">
-          <b>Website clarity</b>
-          <p>Clarify what you do, who you help and why someone should choose you.</p>
-        </div>
-        <div class="tile">
-          <b>Mobile confidence</b>
+          <h3>Mobile confidence</h3>
           <p>Improve readability, layout, trust signals and contact paths for phone visitors.</p>
+          <span class="service-tag" style="background:var(--green-light); color:#22c55e;">Priority</span>
         </div>
-        <div class="tile">
-          <b>Local SEO basics</b>
+        <div class="service-card sc-amber">
+          <div class="service-icon-wrap" style="background:var(--amber-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#f59e0b" stroke-width="1.5"/><path d="M12 4c4.4 0 8 3.6 8 8" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2"/><path d="M8 12h4V8" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Local SEO basics</h3>
           <p>Tighten page titles, headings, metadata, service pages and suburb relevance.</p>
+          <span class="service-tag" style="background:var(--amber-light); color:#f59e0b;">Visibility</span>
         </div>
-        <div class="tile">
-          <b>AI-search readiness</b>
-          <p>Structure content so Google and AI search tools can better understand the business.</p>
+        <div class="service-card sc-violet">
+          <div class="service-icon-wrap" style="background:var(--violet-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.5 3.5L17 7l-2.5 2.5 1 3.5L12 11l-3.5 2 1-3.5L7 7l3.5-.5z" stroke="#8b5cf6" stroke-width="1.4" stroke-linejoin="round"/><circle cx="19" cy="5" r="2" fill="#8b5cf6" opacity="0.5"/></svg>
+          </div>
+          <h3>AI-search readiness</h3>
+          <p>Structure content so Google and AI tools can better understand your business.</p>
+          <span class="service-tag" style="background:var(--violet-light); color:#8b5cf6;">Emerging</span>
         </div>
-        <div class="tile">
-          <b>Enquiry flow</b>
+        <div class="service-card sc-rose">
+          <div class="service-icon-wrap" style="background:var(--rose-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="13" rx="2" stroke="#f43f5e" stroke-width="1.5"/><path d="M3 9l9 5 9-5" stroke="#f43f5e" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Enquiry flow</h3>
           <p>Make the next step obvious with stronger calls-to-action, forms, phone links and proof.</p>
+          <span class="service-tag" style="background:var(--rose-light); color:#f43f5e;">Conversion</span>
         </div>
-        <div class="tile">
-          <b>Practical priorities</b>
+        <div class="service-card sc-teal">
+          <div class="service-icon-wrap" style="background:var(--teal-light);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Practical priorities</h3>
           <p>Separate quick wins from bigger rebuild decisions before recommending more work.</p>
+          <span class="service-tag" style="background:var(--teal-light); color:#14b8a6;">Give-first</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="band" id="process">
-      <div class="section-head">
-        <h2>Practical help before big promises.</h2>
-        <p>I look at your website as part of how your business wins and handles new opportunities, not as a design project in isolation.</p>
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="section-wrap">
+    <p class="section-eyebrow">How it works</p>
+    <h2 class="section-title">Practical help before big promises.</h2>
+    <p class="section-sub">I look at your website as part of how your business wins — not as a design project in isolation.</p>
+    <div class="process-steps">
+      <div class="process-card">
+        <div class="step-bubble">1</div>
+        <h3>Quick review</h3>
+        <p>I check the site for trust, mobile, local search, AI-readiness, conversion and obvious technical issues.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <h3>Quick review</h3>
-          <p>I check the site for trust, mobile, local search, AI-readiness, conversion and obvious technical issues.</p>
-        </div>
-        <div class="step">
-          <h3>Prioritised notes</h3>
-          <p>You get plain-English observations that are useful whether you work with me or not.</p>
-        </div>
-        <div class="step">
-          <h3>Optional improvement</h3>
-          <p>If there is a fit, I can help refresh the site, improve pages, or build a clearer path to enquiry.</p>
-        </div>
+      <div class="process-card">
+        <div class="step-bubble">2</div>
+        <h3>Prioritised notes</h3>
+        <p>You get plain-English observations that are useful whether you work with me or not.</p>
       </div>
-    </section>
+      <div class="process-card">
+        <div class="step-bubble">3</div>
+        <h3>Optional improvement</h3>
+        <p>If there's a fit, I can help refresh the site, improve pages, or build a clearer path to enquiry.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="band soft" id="about">
-      <div class="about-panel">
-        <img class="headshot" src="assets/scott-hynd-headshot.jpeg" alt="Scott Hynd smiling headshot" width="160" height="160">
-        <div>
-          <h2>A real person looking at the business value, not just the website.</h2>
-          <p>I am Scott Hynd. My background is in business systems, automation and practical digital improvement, so I look at websites through a simple lens: does this help the right customer trust the business, understand the offer and take the next step?</p>
-          <p>If a few focused fixes are enough, I will say so. If the site needs deeper work, I will explain the reason in plain English.</p>
-          <ul class="about-list" aria-label="Scott Hynd focus areas">
-            <li>Business systems</li>
-            <li>Website clarity</li>
-            <li>Automation thinking</li>
-            <li>Local search basics</li>
-            <li>Practical priorities</li>
-          </ul>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-layout">
+      <div class="about-photo-col">
+        <div class="about-visual">
+          <div class="about-img-wrap">
+            <img src="assets/scott-hynd-headshot.jpeg" alt="Scott Hynd"
+              id="headshot-img"
+              onerror="document.getElementById('headshot-img').style.display='none'; document.getElementById('headshot-fallback').style.display='flex';">
+            <div id="headshot-fallback" style="display:none; width:100%; aspect-ratio:4/5; background:var(--brand-light); flex-direction:column; align-items:center; justify-content:center; gap:1.25rem; border-radius:20px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="143 258 295 274" style="width:90px;height:90px;">
+                <path fill="#d0cef2" d="M183.91,457.65l15.36-8.9c6.36,14.76,17.31,24.69,37.41,24.69s24.18-7.63,24.18-14.51c0-10.94-10.18-15.27-36.9-22.65-17.74-4.95-35.25-12.31-44.86-26.89-.3,3.66-.47,7.37-.47,11.11,0,12.9,1.85,25.36,5.29,37.15Z"/>
+                <path fill="#d0cef2" d="M417.38,438.82h-55.99v70.75h-40.72v-178.15h40.72v68.21h55.99v-58.3c-24.16-32.37-62.76-53.33-106.26-53.33-38.14,0-72.5,16.12-96.68,41.9,5.45-1.35,11.14-2.04,16.89-2.04,29.27,0,52.17,14,65.15,40.21l-34.36,20.11c-6.11-12.73-14.51-20.62-30.8-20.62-12.72,0-19.09,6.36-19.09,13.49,0,8.14,4.33,13.74,32.07,22.14,26.98,8.14,57.26,17.56,57.26,55.23,0,34.36-27.49,54.72-66.17,54.72-7.57,0-14.57-.74-21.03-2.12,24.18,25.83,58.58,41.98,96.75,41.98,43.5,0,82.1-20.96,106.26-53.33v-60.84Z"/>
+              </svg>
+              <span style="font-family:'Nunito',sans-serif; font-weight:600; color:var(--brand-border); font-size:1.1rem; letter-spacing:0.02em;">Scott Hynd</span>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
-
-    <section class="band">
-      <div class="sample-audit">
-        <div class="section-head">
-          <h2>What the quick review looks for.</h2>
-          <p>The goal is to give you something useful before talking about any rebuild or project. A review usually focuses on the few issues most likely to affect trust, search visibility or enquiry flow.</p>
-          <p class="privacy-note">Privacy note: if you send through your website, I will only use your details to reply to your enquiry or follow up on the review.</p>
+      <div class="about-copy">
+        <p class="section-eyebrow">About Scott</p>
+        <h2 class="section-title">A real person looking at business value, not just the website.</h2>
+        <p>I am Scott Hynd. My background is in business systems, automation and practical digital improvement, so I look at websites through a simple lens: does this help the right customer trust the business, understand the offer and take the next step?</p>
+        <p>If a few focused fixes are enough, I will say so. If the site needs deeper work, I will explain the reason in plain English.</p>
+        <div class="skills-wrap">
+          <span class="skill-chip">Business systems</span>
+          <span class="skill-chip">Website clarity</span>
+          <span class="skill-chip">Automation thinking</span>
+          <span class="skill-chip">Local search basics</span>
+          <span class="skill-chip">Practical priorities</span>
         </div>
-        <div class="sample-sheet" aria-label="Sample quick website review">
-          <header>
-            <strong>Sample one-page audit</strong>
-            <span>Trust + mobile + search</span>
-          </header>
-          <div class="sample-rows">
-            <div class="sample-row">
-              <b>1</b>
-              <div>
-                <strong>First mobile impression</strong>
-                <p>Can a phone visitor quickly understand who you help, what you do and how to contact you?</p>
-              </div>
-            </div>
-            <div class="sample-row">
-              <b>2</b>
-              <div>
-                <strong>Search and AI context</strong>
-                <p>Do your headings, titles and page structure clearly explain your services, location and expertise?</p>
-              </div>
-            </div>
-            <div class="sample-row">
-              <b>3</b>
-              <div>
-                <strong>Trust and enquiry path</strong>
-                <p>Are proof, contact options and calls-to-action obvious before someone decides to leave?</p>
-              </div>
-            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT -->
+<section class="audit-section">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Sample audit</p>
+    <h2 class="section-title">What the quick review looks for.</h2>
+    <p class="section-sub">The goal is to give you something useful before talking about any rebuild or project.</p>
+    <div class="audit-cards">
+      <div class="audit-card">
+        <div class="audit-num-wrap" style="background:var(--brand-light);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="8" y="3" width="12" height="21" rx="3" stroke="#262166" stroke-width="1.6"/><rect x="11" y="20" width="6" height="2" rx="1" fill="#262166"/><rect x="10" y="8" width="8" height="6" rx="1.5" fill="#d0cef2"/></svg>
+        </div>
+        <h3>First mobile impression</h3>
+        <p>Can a phone visitor quickly understand who you help, what you do and how to contact you?</p>
+      </div>
+      <div class="audit-card">
+        <div class="audit-num-wrap" style="background:var(--violet-light);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#8b5cf6" stroke-width="1.6"/><path d="M14 6c4.4 0 8 3.6 8 8" stroke="#8b5cf6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 2"/><path d="M10 14h4V9" stroke="#8b5cf6" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Search and AI context</h3>
+        <p>Do your headings, titles and page structure clearly explain services, location and expertise?</p>
+      </div>
+      <div class="audit-card">
+        <div class="audit-num-wrap" style="background:var(--green-light);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 5h18v16H5z" rx="2" stroke="#22c55e" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 10l9 5 9-5" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Trust and enquiry path</h3>
+        <p>Are proof, contact options and calls-to-action obvious before someone decides to leave?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section>
+  <div class="section-wrap">
+    <p class="section-eyebrow">Built for</p>
+    <h2 class="section-title">Established local operators.</h2>
+    <div class="who-layout">
+      <div class="who-copy">
+        <p>This is for businesses that rely on reputation, referrals, local visibility and trust before someone calls or sends an enquiry.</p>
+        <a class="btn-primary" href="#contact">
+          Get in touch
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="approach-card">
+        <p class="approach-label">My approach</p>
+        <p>If a small refresh is enough, I will say so. If the site needs deeper work, I will explain why in plain English and focus on the changes most likely to make the business easier to trust and contact.</p>
+        <div class="privacy-note">
+          <strong>Privacy:</strong> If you send through your website, I will only use your details to reply to your enquiry or follow up on the review. Nothing else.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Get in touch</p>
+    <h2 class="section-title">Want a second set of eyes on your site?</h2>
+    <p class="section-sub">Send through your website and I'll send back a few practical observations. No pressure, no jargon and no obligation to rebuild anything.</p>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3>Prefer to email directly?</h3>
+        <p>Either way works. Use the form or reach out directly. I'll get back to you within 48 hours.</p>
+        <a class="contact-method" href="mailto:scott@scotthynd.com?subject=Quick website review">
+          <div class="cm-icon" style="background:var(--brand-light);">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="13" rx="2" stroke="#262166" stroke-width="1.4"/><path d="M2 7l8 5 8-5" stroke="#262166" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          scott@scotthynd.com
+        </a>
+        <div class="next-steps">
+          <p class="next-steps-label">What happens next</p>
+          <div class="next-step">
+            <div class="ns-bubble"><span>1</span></div>
+            <p>I review your website across trust, mobile, SEO and enquiry flow</p>
+          </div>
+          <div class="next-step">
+            <div class="ns-bubble"><span>2</span></div>
+            <p>You get plain-English notes back within 48 hours</p>
+          </div>
+          <div class="next-step">
+            <div class="ns-bubble"><span>3</span></div>
+            <p>No obligation — useful whether you work with me or not</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="band soft">
-      <div class="proof">
-        <div class="section-head">
-          <h2>Built for established local operators.</h2>
-          <p>This is for businesses that rely on reputation, referrals, local visibility and trust before someone calls or sends an enquiry.</p>
+      <div class="contact-form">
+        <form
+          id="website-review-form"
+          action="https://forms.zohopublic.com/scotthynd1/form/WebsiteReviewRequest/formperma/mVRc0ufO6vCfTDREaseBcUxmRjD_kVl-9giawLStW9k/htmlRecords/submit"
+          method="POST"
+          accept-charset="UTF-8"
+          enctype="multipart/form-data"
+          target="zoho-submit-frame"
+          onsubmit="return handleZohoFormSubmit(event)">
+          <input type="hidden" name="zf_referrer_name" value="">
+          <input type="hidden" name="zf_redirect_url" value="">
+          <input type="hidden" name="zc_gad" value="">
+          <input type="hidden" name="PhoneNumber_countrycode" value="">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="Name_First" maxlength="255" fieldType="7" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="Name_Last" maxlength="255" fieldType="7" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="Email" checktype="c5" maxlength="255" fieldType="9" placeholder="jane@yourfirm.com.au" required>
+          </div>
+          <div class="form-group">
+            <label for="website">Your website URL</label>
+            <input type="url" id="website" name="Website" checktype="c6" maxlength="2083" fieldType="10" placeholder="https://yourfirm.com.au" required>
+          </div>
+          <div class="form-group">
+            <label for="businessType">Type of business</label>
+            <select id="businessType" name="Dropdown" checktype="c1" required>
+              <option value="" disabled selected>Select your industry...</option>
+              <option value="Legal / professional services">Legal / professional services</option>
+              <option value="Accounting / financial services">Accounting / financial services</option>
+              <option value="Real estate / property">Real estate / property</option>
+              <option value="Medical / allied health">Medical / allied health</option>
+              <option value="Trade / home services">Trade / home services</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Anything specific you'd like me to look at? <span style="color:var(--slate-400); font-weight:400;">(optional)</span></label>
+            <textarea id="message" name="MultiLine" checktype="c1" maxlength="65535" placeholder="e.g. We get traffic but very few enquiries, or our site looks broken on phones..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; border:0; cursor:pointer;">
+            Send my site for review
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note">This secure form is handled by Zoho Forms. Your details are only used to reply to your enquiry.</p>
+        </form>
+        <iframe class="zoho-submit-frame" name="zoho-submit-frame" title="Zoho form submission"></iframe>
+        <div class="form-success" id="form-success" role="status" aria-live="polite">
+          <div class="success-icon">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M8 15.5l5 5L22 10" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Thanks, your request has been sent.</h3>
+          <p>I will review the website and come back with practical notes within 48 hours.</p>
         </div>
-        <p class="quote"><strong>If a small refresh is enough, I will say so.</strong> If the site needs deeper work, I will explain why in plain English and focus on the changes most likely to make the business easier to trust and contact.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="band">
-      <div class="cta">
-        <div>
-          <h2>Want a second set of eyes on your site?</h2>
-          <p>Send through your website and I will send back a few practical observations. No pressure, no jargon and no obligation to rebuild anything.</p>
-        </div>
-        <a class="button" href="mailto:scott@scotthynd.com?subject=Quick website review">Email Scott</a>
-      </div>
-    </section>
-  </main>
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="cta-eyebrow">No pressure · No jargon · No obligation</p>
+    <h2>Ready to make your site work harder?</h2>
+    <p>A quick review costs nothing. The insights could change how many enquiries your site generates.</p>
+    <a class="btn-cta" href="#contact">
+      Get your free review
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
 
-  <footer>
-    <span>Scott Hynd · Website reviews, local SEO, AI-search visibility and practical digital improvement · scott@scotthynd.com</span>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-icon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="143 258 295 274" aria-label="Scott Hynd">
+        <path fill="white" d="M183.91,457.65l15.36-8.9c6.36,14.76,17.31,24.69,37.41,24.69s24.18-7.63,24.18-14.51c0-10.94-10.18-15.27-36.9-22.65-17.74-4.95-35.25-12.31-44.86-26.89-.3,3.66-.47,7.37-.47,11.11,0,12.9,1.85,25.36,5.29,37.15Z"/>
+        <path fill="white" d="M417.38,438.82h-55.99v70.75h-40.72v-178.15h40.72v68.21h55.99v-58.3c-24.16-32.37-62.76-53.33-106.26-53.33-38.14,0-72.5,16.12-96.68,41.9,5.45-1.35,11.14-2.04,16.89-2.04,29.27,0,52.17,14,65.15,40.21l-34.36,20.11c-6.11-12.73-14.51-20.62-30.8-20.62-12.72,0-19.09,6.36-19.09,13.49,0,8.14,4.33,13.74,32.07,22.14,26.98,8.14,57.26,17.56,57.26,55.23,0,34.36-27.49,54.72-66.17,54.72-7.57,0-14.57-.74-21.03-2.12,24.18,25.83,58.58,41.98,96.75,41.98,43.5,0,82.1-20.96,106.26-53.33v-60.84Z"/>
+      </svg>
+    </div>
+    <span>Scott Hynd · Website reviews, local SEO, AI-search visibility and practical digital improvement</span>
+  </div>
+  <a href="mailto:scott@scotthynd.com">scott@scotthynd.com</a>
+</footer>
+
+<script>
+function handleZohoFormSubmit(event) {
+  const form = event.currentTarget;
+  const success = document.getElementById('form-success');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const referrerInput = form.querySelector('input[name="zf_referrer_name"]');
+
+  if (referrerInput) {
+    referrerInput.value = window.location.href;
+  }
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.style.opacity = '0.72';
+    submitButton.style.cursor = 'wait';
+  }
+
+  window.setTimeout(function () {
+    form.reset();
+    form.style.display = 'none';
+    if (success) {
+      success.classList.add('is-visible');
+    }
+  }, 900);
+
+  return true;
+}
+</script>
+
 </body>
 </html>

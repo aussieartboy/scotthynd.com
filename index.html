@@ -1300,7 +1300,7 @@ footer a:hover { color: white; }
           </div>
           <div class="form-group">
             <label for="website">Your website URL</label>
-            <input type="url" id="website" name="Website" checktype="c6" maxlength="2083" fieldType="10" placeholder="https://yourfirm.com.au" required>
+            <input type="text" id="website" name="Website" checktype="c6" maxlength="2083" fieldType="10" inputmode="url" autocapitalize="none" autocomplete="url" placeholder="yourfirm.com.au" required>
           </div>
           <div class="form-group">
             <label for="businessType">Type of business</label>
@@ -1372,6 +1372,14 @@ function handleZohoFormSubmit(event) {
 
   if (referrerInput) {
     referrerInput.value = window.location.href;
+  }
+
+  const websiteInput = form.querySelector('input[name="Website"]');
+  if (websiteInput) {
+    const rawWebsite = websiteInput.value.trim();
+    if (rawWebsite && !/^[a-z][a-z0-9+.-]*:\/\//i.test(rawWebsite)) {
+      websiteInput.value = 'https://' + rawWebsite.replace(/^\/+/, '');
+    }
   }
 
   if (submitButton) {

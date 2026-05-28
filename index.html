@@ -1366,6 +1366,11 @@ footer a:hover { color: white; }
 <script>
 function handleZohoFormSubmit(event) {
   const form = event.currentTarget;
+  if (form.dataset.submitting === 'true') {
+    return false;
+  }
+  form.dataset.submitting = 'true';
+
   const success = document.getElementById('form-success');
   const submitButton = form.querySelector('button[type="submit"]');
   const referrerInput = form.querySelector('input[name="zf_referrer_name"]');

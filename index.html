@@ -1284,6 +1284,11 @@ footer a:hover { color: white; }
           <input type="hidden" name="zf_redirect_url" value="">
           <input type="hidden" name="zc_gad" value="">
           <input type="hidden" name="PhoneNumber_countrycode" value="">
+          <input type="hidden" id="formStartedAt" value="">
+          <div style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+            <label for="companyWebsiteConfirm">Company website confirmation</label>
+            <input type="text" id="companyWebsiteConfirm" tabindex="-1" autocomplete="off">
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First name</label>
@@ -1364,28 +1369,85 @@ footer a:hover { color: white; }
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const startedAt = document.getElementById('formStartedAt');
+  if (startedAt) {
+    startedAt.value = String(Date.now());
+  }
+});
+
 function handleZohoFormSubmit(event) {
   const form = event.currentTarget;
   if (form.dataset.submitting === 'true') {
     return false;
   }
-  form.dataset.submitting = 'true';
 
   const success = document.getElementById('form-success');
   const submitButton = form.querySelector('button[type="submit"]');
   const referrerInput = form.querySelector('input[name="zf_referrer_name"]');
+  const honeypot = document.getElementById('companyWebsiteConfirm');
+  const startedAt = document.getElementById('formStartedAt');
+  const websiteInput = form.querySelector('input[name="Website"]');
+  const emailInput = form.querySelector('input[name="Email"]');
+  const messageInput = form.querySelector('textarea[name="MultiLine"]');
+
+  if (honeypot && honeypot.value.trim()) {
+    return false;
+  }
+
+  const elapsedMs = startedAt ? Date.now() - Number(startedAt.value || 0) : 0;
+  if (!elapsedMs || elapsedMs < 3500) {
+    alert('Please take a moment to complete the form before sending.');
+    return false;
+  }
 
   if (referrerInput) {
     referrerInput.value = window.location.href;
   }
 
-  const websiteInput = form.querySelector('input[name="Website"]');
   if (websiteInput) {
     const rawWebsite = websiteInput.value.trim();
-    if (rawWebsite && !/^[a-z][a-z0-9+.-]*:\/\//i.test(rawWebsite)) {
-      websiteInput.value = 'https://' + rawWebsite.replace(/^\/+/, '');
+    const normalizedWebsite = /^[a-z][a-z0-9+.-]*:\/\//i.test(rawWebsite)
+      ? rawWebsite
+      : 'https://' + rawWebsite.replace(/^\/+/, '');
+    let parsedWebsite;
+    try {
+      parsedWebsite = new URL(normalizedWebsite);
+    } catch (error) {
+      alert('Please enter a valid business website URL.');
+      websiteInput.focus();
+      return false;
+    }
+    const hostname = parsedWebsite.hostname.toLowerCase();
+    if (!hostname.includes('.') || /(^|\.)example\.|(^|\.)test$|localhost|^\d+\.\d+\.\d+\.\d+$/.test(hostname)) {
+      alert('Please enter a real business website URL.');
+      websiteInput.focus();
+      return false;
+    }
+    websiteInput.value = normalizedWebsite;
+  }
+
+  if (emailInput) {
+    const emailValue = emailInput.value.trim().toLowerCase();
+    const disposableOrSpam = /(mailinator|tempmail|10minutemail|guerrillamail|yopmail|example)\./;
+    if (disposableOrSpam.test(emailValue)) {
+      alert('Please use your business email address.');
+      emailInput.focus();
+      return false;
     }
   }
+
+  if (messageInput) {
+    const messageValue = messageInput.value.trim().toLowerCase();
+    const spamPattern = /(ego volo|pretium|scire vestri|http:\/\/|crypto|casino|viagra|loan offer)/i;
+    if (spamPattern.test(messageValue)) {
+      alert('Please enter a genuine business review request.');
+      messageInput.focus();
+      return false;
+    }
+  }
+
+  form.dataset.submitting = 'true';
 
   if (submitButton) {
     submitButton.disabled = true;

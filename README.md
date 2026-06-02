@@ -12,6 +12,10 @@ Static one-page website for Scott Hynd.
 
 The homepage uses a native styled contact form that posts to Zoho Forms using Zoho's generated HTML/CSS submit endpoint. This keeps the visual design clean on GitHub Pages while still capturing submissions in Zoho.
 
+The live page keeps the custom-designed form rather than using Zoho's iframe embed. Spam protection is therefore handled with lightweight front-end checks before the Zoho submit: a hidden honeypot field, a minimum time-on-form check, stronger website URL validation, basic disposable-email blocking, and obvious spam phrase blocking. These checks reduce page-driven bot spam while preserving the custom design and Zoho Forms backend capture.
+
+Important limitation: because the page still posts directly to Zoho's public HTML/CSS endpoint, these checks cannot stop a bot that bypasses the page and posts directly to the Zoho endpoint. If spam continues, the next step is a small backend/serverless form proxy that validates requests before forwarding clean leads to Zoho.
+
 The Zoho Forms version remains available as a hosted fallback:
 
 - Public form URL: `https://forms.zohopublic.com/scotthynd1/form/WebsiteReviewRequest/formperma/DGJZU9e6aar0Of3jRZgjOyrkkoTjEaJIyiHvfEWth9o`

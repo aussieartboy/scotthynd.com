@@ -1,6 +1,6 @@
 # Scott Hynd
 
-Scott Hynd provides practical AI and business automation help for local operators.
+Scott Hynd provides practical AI, website and workflow help for small businesses.
 
 Website: https://scotthynd.com/
 Email: scott@scotthynd.com
@@ -15,9 +15,27 @@ Location: Brisbane, Queensland, Australia
 - website clarity improvements
 - practical visibility fixes for Google, AI tools, and customers
 
+## Primary Offers
+
+- AI Possibility Check
+- Missed Enquiry Recovery
+- Quote Follow-Up Mini-System
+- Website Opportunity Pack
+- Search and Visibility Fixes
+
+## Common Problems
+
+- missed enquiries
+- slow quote follow-up
+- repeated customer questions
+- admin overload
+- unclear website messaging
+- weak local search visibility
+- business websites that do not make the next step clear
+
 ## Positioning
 
-Plain-English help turning repeated business tasks, enquiry follow-up, quote chasing, admin friction, and website confusion into simple tools, workflows, and next steps.
+Plain-English help turning repeated business tasks, enquiry follow-up, quote chasing, admin friction, website confusion, and weak search visibility into simple tools, workflows, clearer copy, and next steps.
 
 ## Best Fit
 
@@ -25,6 +43,8 @@ Plain-English help turning repeated business tasks, enquiry follow-up, quote cha
 - small business owners
 - consultants and small teams
 - businesses relying on enquiries, quotes, referrals, reputation, and consistent follow-up
+- Brisbane businesses wanting local practical help
+- remote small businesses that need plain-English AI or workflow support
 
 ## Not A Fit
 
@@ -35,3 +55,11 @@ Plain-English help turning repeated business tasks, enquiry follow-up, quote cha
 ## Primary Offer
 
 Send through a business, website, or one repeated admin task, and Scott can suggest practical places where AI, a simple workflow, or a small tool could help.
+
+## Website Opportunity Pack
+
+A practical review showing what a business website could say more clearly, where the trust gaps are, and what a stronger next-step path could look like before a full rebuild.
+
+## Search and Visibility Fixes
+
+Plain-English improvements so Google, AI tools, and customers can better understand what the business does, where it operates, and what to do next.

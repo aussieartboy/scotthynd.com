@@ -3,6 +3,7 @@
 Scott Hynd provides practical AI, website and workflow help for small businesses.
 
 Website: https://scotthynd.com/
+Website check: https://scotthynd.com/website-check/
 Email: scott@scotthynd.com
 Location: Brisbane, Queensland, Australia
 
@@ -18,6 +19,7 @@ Location: Brisbane, Queensland, Australia
 ## Primary Offers
 
 - AI Possibility Check
+- Small Business Website Check
 - Missed Enquiry Recovery
 - Quote Follow-Up Mini-System
 - Website Opportunity Pack
@@ -59,6 +61,10 @@ Send through a business, website, or one repeated admin task, and Scott can sugg
 ## Website Opportunity Pack
 
 A practical review showing what a business website could say more clearly, where the trust gaps are, and what a stronger next-step path could look like before a full rebuild.
+
+## Small Business Website Check
+
+A short plain-English review of one website page for service wording, enquiry path, FAQs, next steps, and whether Google or AI-search tools can clearly understand the business.
 
 ## Search and Visibility Fixes
 

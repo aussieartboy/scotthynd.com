@@ -1,18 +1,19 @@
 # scotthynd.com
 
-Static one-page website for Scott Hynd.
+Static website for Scott Hynd.
 
 ## Files
 
 - `index.html` is the homepage.
+- `website-check/index.html` is the Website Check landing page.
 - `CNAME` tells GitHub Pages to use `scotthynd.com`.
 - `assets/scott-hynd-headshot.jpeg` is the profile image.
 
 ## Contact Form
 
-The homepage uses a native styled contact form that posts to Zoho Forms using Zoho's generated HTML/CSS submit endpoint. This keeps the visual design clean on GitHub Pages while still capturing submissions in Zoho.
+The homepage and Website Check page use native styled contact forms that post to Zoho Forms using Zoho's generated HTML/CSS submit endpoint. This keeps the visual design clean on GitHub Pages while still capturing submissions in Zoho.
 
-The live page keeps the custom-designed form rather than using Zoho's iframe embed. Spam protection is therefore handled with lightweight front-end checks before the Zoho submit: a hidden honeypot field, a minimum time-on-form check, stronger website URL validation, basic disposable-email blocking, and obvious spam phrase blocking. These checks reduce page-driven bot spam while preserving the custom design and Zoho Forms backend capture.
+The live pages keep the custom-designed forms rather than using Zoho's iframe embed. Spam protection is therefore handled with lightweight front-end checks before the Zoho submit: a hidden honeypot field, a minimum time-on-form check, stronger website URL validation, basic disposable-email blocking, obvious spam phrase blocking, duplicate-submit protection, and inline failure messages. These checks reduce page-driven bot spam while preserving the custom design and Zoho Forms backend capture.
 
 Important limitation: because the page still posts directly to Zoho's public HTML/CSS endpoint, these checks cannot stop a bot that bypasses the page and posts directly to the Zoho endpoint. If spam continues, the next step is a small backend/serverless form proxy that validates requests before forwarding clean leads to Zoho.
 

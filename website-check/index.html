@@ -621,6 +621,19 @@ textarea:focus {
   color: var(--slate-500);
   font-size: .82rem;
 }
+.form-error {
+  display: none;
+  padding: .85rem 1rem;
+  border: 1px solid #fecdd3;
+  border-radius: var(--radius-sm);
+  background: #fff1f2;
+  color: #9f1239;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+.form-error.is-visible {
+  display: block;
+}
 .zoho-submit-frame {
   width: 1px;
   height: 1px;
@@ -1007,6 +1020,7 @@ footer a {
               <label for="message">What feels unclear or out of date? <span style="color:var(--slate-400); font-weight:400;">(optional)</span></label>
               <textarea id="message" name="MultiLine" checktype="c1" maxlength="65535" placeholder="For example: the website has grown over time, the service page feels unclear, customers keep asking the same questions, or the quote/enquiry path feels messy."></textarea>
             </div>
+            <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
             <button type="submit" class="btn-primary" style="width:100%; cursor:pointer;">
               Request my website check
             </button>
@@ -1039,30 +1053,150 @@ footer a {
   </footer>
 
 <script>
+const MIN_FORM_ELAPSED_MS = 4000;
+
 document.addEventListener('DOMContentLoaded', function () {
   const startedAt = document.getElementById('formStartedAt');
   if (startedAt) {
     startedAt.value = String(Date.now());
   }
+
+  const form = document.getElementById('website-review-form');
+  const submitFrame = document.querySelector('iframe[name="zoho-submit-frame"]');
+  if (form && submitFrame) {
+    submitFrame.addEventListener('load', function () {
+      if (form.dataset.submitting !== 'true') {
+        return;
+      }
+      window.clearTimeout(form.submitTimeoutId);
+      form.reset();
+      form.style.display = 'none';
+      const success = document.getElementById('form-success');
+      if (success) {
+        success.style.display = 'block';
+      }
+    });
+  }
 });
 
-function handleZohoFormSubmit(event) {
-  const form = event.target;
-  const trap = document.getElementById('companyWebsiteConfirm');
-  const startedAt = document.getElementById('formStartedAt');
-  const elapsed = startedAt && startedAt.value ? Date.now() - Number(startedAt.value) : 0;
+function showFormError(message, field) {
+  const error = document.getElementById('form-error');
+  if (error) {
+    error.textContent = message;
+    error.classList.add('is-visible');
+  } else {
+    alert(message);
+  }
+  if (field) {
+    field.focus();
+  }
+}
 
-  if ((trap && trap.value.trim() !== '') || elapsed < 2500) {
+function hideFormError() {
+  const error = document.getElementById('form-error');
+  if (error) {
+    error.textContent = '';
+    error.classList.remove('is-visible');
+  }
+}
+
+function handleZohoFormSubmit(event) {
+  const form = event.currentTarget || event.target;
+  if (form.dataset.submitting === 'true') {
     return false;
   }
 
-  setTimeout(function () {
-    form.style.display = 'none';
-    const success = document.getElementById('form-success');
-    if (success) {
-      success.style.display = 'block';
+  const submitButton = form.querySelector('button[type="submit"]');
+  const referrerInput = form.querySelector('input[name="zf_referrer_name"]');
+  const honeypot = document.getElementById('companyWebsiteConfirm');
+  const startedAt = document.getElementById('formStartedAt');
+  const websiteInput = form.querySelector('input[name="Website"]');
+  const emailInput = form.querySelector('input[name="Email"]');
+  const firstNameInput = form.querySelector('input[name="Name_First"]');
+  const lastNameInput = form.querySelector('input[name="Name_Last"]');
+  const messageInput = form.querySelector('textarea[name="MultiLine"]');
+
+  hideFormError();
+
+  if (honeypot && honeypot.value.trim()) {
+    return false;
+  }
+
+  const elapsedMs = startedAt ? Date.now() - Number(startedAt.value || 0) : 0;
+  if (!elapsedMs || elapsedMs < MIN_FORM_ELAPSED_MS) {
+    showFormError('Please take a moment to complete the form before sending.');
+    return false;
+  }
+
+  if (referrerInput) {
+    referrerInput.value = window.location.href;
+  }
+
+  const nameValue = [firstNameInput && firstNameInput.value, lastNameInput && lastNameInput.value].join(' ');
+  if (/https?:|www\.|<a\b/i.test(nameValue)) {
+    showFormError('Please enter your name without links.', firstNameInput);
+    return false;
+  }
+
+  if (websiteInput) {
+    const rawWebsite = websiteInput.value.trim();
+    const normalizedWebsite = /^[a-z][a-z0-9+.-]*:\/\//i.test(rawWebsite)
+      ? rawWebsite
+      : 'https://' + rawWebsite.replace(/^\/+/, '');
+    let parsedWebsite;
+    try {
+      parsedWebsite = new URL(normalizedWebsite);
+    } catch (error) {
+      showFormError('Please enter a valid business website URL.', websiteInput);
+      return false;
     }
-  }, 900);
+    const hostname = parsedWebsite.hostname.toLowerCase();
+    if (!['http:', 'https:'].includes(parsedWebsite.protocol)) {
+      showFormError('Please enter a website URL that starts with http or https.', websiteInput);
+      return false;
+    }
+    if (!hostname.includes('.') || /(^|\.)example\.|(^|\.)test$|(^|\.)invalid$|(^|\.)localhost$|(^|\.)local$|^\d+\.\d+\.\d+\.\d+$/.test(hostname)) {
+      showFormError('Please enter a real business website URL.', websiteInput);
+      return false;
+    }
+    websiteInput.value = normalizedWebsite;
+  }
+
+  if (emailInput) {
+    const emailValue = emailInput.value.trim().toLowerCase();
+    const disposableOrSpam = /(mailinator|tempmail|10minutemail|guerrillamail|yopmail|example)\./;
+    if (disposableOrSpam.test(emailValue)) {
+      showFormError('Please use your business email address.', emailInput);
+      return false;
+    }
+  }
+
+  if (messageInput) {
+    const messageValue = messageInput.value.trim().toLowerCase();
+    const spamPattern = /(ego volo|pretium|scire vestri|crypto|casino|viagra|loan offer|guest post|buy backlinks?)/i;
+    if (spamPattern.test(messageValue)) {
+      showFormError('Please enter a genuine business request.', messageInput);
+      return false;
+    }
+  }
+
+  form.dataset.submitting = 'true';
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.style.opacity = '0.72';
+    submitButton.style.cursor = 'wait';
+  }
+
+  form.submitTimeoutId = window.setTimeout(function () {
+    form.dataset.submitting = 'false';
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.style.opacity = '';
+      submitButton.style.cursor = 'pointer';
+    }
+    showFormError('The form did not confirm that it was sent. Please try again or email scott@scotthynd.com.');
+  }, 12000);
 
   return true;
 }

@@ -871,6 +871,19 @@ a.service-card {
 
 .form-note { color: var(--slate-500); }
 
+.form-error {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #fecdd3;
+  border-radius: var(--radius-sm);
+  background: var(--rose-light);
+  color: #9f1239;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.form-error.is-visible { display: block; }
+
 .success-icon {
   width: 60px; height: 60px;
   background: var(--green-light);
@@ -1539,6 +1552,7 @@ footer a:hover { color: white; }
             <label for="message">What would you like AI, a simple workflow or clearer website copy to help with? <span style="color:var(--slate-400); font-weight:400;">(optional)</span></label>
             <textarea id="message" name="MultiLine" checktype="c1" maxlength="65535" placeholder="Good examples: we forget to follow up quotes, customers keep asking the same questions, our website does not explain the next step, or I want to know what AI could actually do in this business."></textarea>
           </div>
+          <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
           <button type="submit" class="btn-primary" style="width:100%; justify-content:center; border:0; cursor:pointer;">
             Request my AI Possibility Check
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1586,15 +1600,55 @@ footer a:hover { color: white; }
 </footer>
 
 <script>
+const MIN_FORM_ELAPSED_MS = 4000;
+
 document.addEventListener('DOMContentLoaded', function () {
   const startedAt = document.getElementById('formStartedAt');
   if (startedAt) {
     startedAt.value = String(Date.now());
   }
+
+  const form = document.getElementById('website-review-form');
+  const submitFrame = document.querySelector('iframe[name="zoho-submit-frame"]');
+  if (form && submitFrame) {
+    submitFrame.addEventListener('load', function () {
+      if (form.dataset.submitting !== 'true') {
+        return;
+      }
+      window.clearTimeout(form.submitTimeoutId);
+      form.reset();
+      form.style.display = 'none';
+      const success = document.getElementById('form-success');
+      if (success) {
+        success.classList.add('is-visible');
+      }
+    });
+  }
 });
 
+function showFormError(message, field) {
+  const error = document.getElementById('form-error');
+  if (error) {
+    error.textContent = message;
+    error.classList.add('is-visible');
+  } else {
+    alert(message);
+  }
+  if (field) {
+    field.focus();
+  }
+}
+
+function hideFormError() {
+  const error = document.getElementById('form-error');
+  if (error) {
+    error.textContent = '';
+    error.classList.remove('is-visible');
+  }
+}
+
 function handleZohoFormSubmit(event) {
-  const form = event.currentTarget;
+  const form = event.currentTarget || event.target;
   if (form.dataset.submitting === 'true') {
     return false;
   }
@@ -1606,20 +1660,30 @@ function handleZohoFormSubmit(event) {
   const startedAt = document.getElementById('formStartedAt');
   const websiteInput = form.querySelector('input[name="Website"]');
   const emailInput = form.querySelector('input[name="Email"]');
+  const firstNameInput = form.querySelector('input[name="Name_First"]');
+  const lastNameInput = form.querySelector('input[name="Name_Last"]');
   const messageInput = form.querySelector('textarea[name="MultiLine"]');
+
+  hideFormError();
 
   if (honeypot && honeypot.value.trim()) {
     return false;
   }
 
   const elapsedMs = startedAt ? Date.now() - Number(startedAt.value || 0) : 0;
-  if (!elapsedMs || elapsedMs < 3500) {
-    alert('Please take a moment to complete the form before sending.');
+  if (!elapsedMs || elapsedMs < MIN_FORM_ELAPSED_MS) {
+    showFormError('Please take a moment to complete the form before sending.');
     return false;
   }
 
   if (referrerInput) {
     referrerInput.value = window.location.href;
+  }
+
+  const nameValue = [firstNameInput && firstNameInput.value, lastNameInput && lastNameInput.value].join(' ');
+  if (/https?:|www\.|<a\b/i.test(nameValue)) {
+    showFormError('Please enter your name without links.', firstNameInput);
+    return false;
   }
 
   if (websiteInput) {
@@ -1631,14 +1695,16 @@ function handleZohoFormSubmit(event) {
     try {
       parsedWebsite = new URL(normalizedWebsite);
     } catch (error) {
-      alert('Please enter a valid business website URL.');
-      websiteInput.focus();
+      showFormError('Please enter a valid business website URL.', websiteInput);
       return false;
     }
     const hostname = parsedWebsite.hostname.toLowerCase();
-    if (!hostname.includes('.') || /(^|\.)example\.|(^|\.)test$|localhost|^\d+\.\d+\.\d+\.\d+$/.test(hostname)) {
-      alert('Please enter a real business website URL.');
-      websiteInput.focus();
+    if (!['http:', 'https:'].includes(parsedWebsite.protocol)) {
+      showFormError('Please enter a website URL that starts with http or https.', websiteInput);
+      return false;
+    }
+    if (!hostname.includes('.') || /(^|\.)example\.|(^|\.)test$|(^|\.)invalid$|(^|\.)localhost$|(^|\.)local$|^\d+\.\d+\.\d+\.\d+$/.test(hostname)) {
+      showFormError('Please enter a real business website URL.', websiteInput);
       return false;
     }
     websiteInput.value = normalizedWebsite;
@@ -1648,18 +1714,16 @@ function handleZohoFormSubmit(event) {
     const emailValue = emailInput.value.trim().toLowerCase();
     const disposableOrSpam = /(mailinator|tempmail|10minutemail|guerrillamail|yopmail|example)\./;
     if (disposableOrSpam.test(emailValue)) {
-      alert('Please use your business email address.');
-      emailInput.focus();
+      showFormError('Please use your business email address.', emailInput);
       return false;
     }
   }
 
   if (messageInput) {
     const messageValue = messageInput.value.trim().toLowerCase();
-    const spamPattern = /(ego volo|pretium|scire vestri|http:\/\/|crypto|casino|viagra|loan offer)/i;
+    const spamPattern = /(ego volo|pretium|scire vestri|crypto|casino|viagra|loan offer|guest post|buy backlinks?)/i;
     if (spamPattern.test(messageValue)) {
-      alert('Please enter a genuine business request.');
-      messageInput.focus();
+      showFormError('Please enter a genuine business request.', messageInput);
       return false;
     }
   }
@@ -1672,13 +1736,15 @@ function handleZohoFormSubmit(event) {
     submitButton.style.cursor = 'wait';
   }
 
-  window.setTimeout(function () {
-    form.reset();
-    form.style.display = 'none';
-    if (success) {
-      success.classList.add('is-visible');
+  form.submitTimeoutId = window.setTimeout(function () {
+    form.dataset.submitting = 'false';
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.style.opacity = '';
+      submitButton.style.cursor = 'pointer';
     }
-  }, 900);
+    showFormError('The form did not confirm that it was sent. Please try again or email scott@scotthynd.com.');
+  }, 12000);
 
   return true;
 }

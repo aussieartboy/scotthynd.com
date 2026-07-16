@@ -1504,7 +1504,6 @@ footer a:hover { color: white; }
       <div class="contact-form">
         <form
           id="website-review-form"
-          action="https://forms.zohopublic.com/scotthynd1/form/WebsiteReviewRequest/formperma/mVRc0ufO6vCfTDREaseBcUxmRjD_kVl-9giawLStW9k/htmlRecords/submit"
           method="POST"
           accept-charset="UTF-8"
           enctype="multipart/form-data"
@@ -1647,6 +1646,13 @@ function hideFormError() {
   }
 }
 
+function getZohoSubmitUrl() {
+  const base = 'https://forms.zohopublic.com/scotthynd1/form/';
+  const form = 'WebsiteReviewRequest';
+  const perma = 'mVRc0ufO6vCfTDREaseBcUxmRjD_kVl-9giawLStW9k';
+  return base + form + '/formperma/' + perma + '/htmlRecords/submit';
+}
+
 function handleZohoFormSubmit(event) {
   const form = event.currentTarget || event.target;
   if (form.dataset.submitting === 'true') {
@@ -1721,7 +1727,7 @@ function handleZohoFormSubmit(event) {
 
   if (messageInput) {
     const messageValue = messageInput.value.trim().toLowerCase();
-    const spamPattern = /(ego volo|pretium|scire vestri|crypto|casino|viagra|loan offer|guest post|buy backlinks?)/i;
+    const spamPattern = /(ego volo|pretium|scire vestri|crypto|casino|viagra|loan offer|guest post|buy backlinks?|jackpot|instant gratification|lottery|sweepstakes|prize money|poderdiario)/i;
     if (spamPattern.test(messageValue)) {
       showFormError('Please enter a genuine business request.', messageInput);
       return false;
@@ -1729,6 +1735,7 @@ function handleZohoFormSubmit(event) {
   }
 
   form.dataset.submitting = 'true';
+  form.action = getZohoSubmitUrl();
 
   if (submitButton) {
     submitButton.disabled = true;
